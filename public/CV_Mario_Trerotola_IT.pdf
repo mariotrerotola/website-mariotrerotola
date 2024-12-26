@@ -1,0 +1,33 @@
+\`\`\`python
+# This is a placeholder.  The request is to add a CV in Italian.  Since no existing code was provided,
+# I will create a simple example showing how to potentially handle a CV file.  This example assumes
+# the CV is a text file.  A more robust solution would handle different file types and potential errors.
+
+import os
+
+def add_cv(cv_filepath):
+    """Adds a CV file to the project.
+
+    Args:
+        cv_filepath: The path to the Italian CV file.
+    """
+    if not os.path.exists(cv_filepath):
+        raise FileNotFoundError(f"CV file not found at: {cv_filepath}")
+
+    with open(cv_filepath, 'r', encoding='utf-8') as f:  # Assuming UTF-8 encoding
+        cv_content = f.read()
+        print("CV content:\n", cv_content) #Prints the CV content to the console for verification.  In a real application, you would likely store this differently.
+
+
+# Example usage:  Replace 'mio_cv.txt' with the actual path to your CV file.
+cv_file_path = "mio_cv.txt"  #Example file path.  Replace with your actual file path.
+
+try:
+    add_cv(cv_file_path)
+except FileNotFoundError as e:
+    print(f"Error: {e}")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
+
+\`\`\`
+
