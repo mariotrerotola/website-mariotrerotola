@@ -73,12 +73,15 @@ export default function Navbar({
       {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {(['about', 'experience', 'education', 'skills', 'projects', 'contact'] as SectionKey[]).map((section) => (
+            {['about', 'experience', 'education', 'skills', 'projects', 'contact'].map((section) => (
               <a
                 key={section}
                 href={`#${section}`}
-                className={`text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium relative ${activeSection === section ? 'text-white' : ''
+                className={`text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium relative ${activeSection === section ? 'text-white' : ''
                   }`}
+                onClick={() => {
+                  setIsOpen(false)
+                }}
               >
                 {content.nav[section]}
                 {activeSection === section && (

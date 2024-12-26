@@ -4,9 +4,6 @@ import { Menu, X } from 'lucide-react'
 import { it } from '../locales/it'
 import { en } from '../locales/en'
 
-
-type SectionKey = 'about' | 'experience' | 'education' | 'skills' | 'projects' | 'contact';
-
 export default function Navbar({
   language,
   setLanguage,
@@ -39,7 +36,7 @@ export default function Navbar({
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              {(['about', 'experience', 'education', 'skills', 'projects', 'contact'] as SectionKey[]).map((section) => (
+              {['about', 'experience', 'education', 'skills', 'projects', 'contact'].map((section: SectionKey) => (
                 <a
                   key={section}
                   href={`#${section}`}
@@ -73,12 +70,15 @@ export default function Navbar({
       {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {(['about', 'experience', 'education', 'skills', 'projects', 'contact'] as SectionKey[]).map((section) => (
+            {['about', 'experience', 'education', 'skills', 'projects', 'contact'].map((section) => (
               <a
                 key={section}
                 href={`#${section}`}
-                className={`text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium relative ${activeSection === section ? 'text-white' : ''
+                className={`text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium relative ${activeSection === section ? 'text-white' : ''
                   }`}
+                onClick={() => {
+                  setIsOpen(false)
+                }}
               >
                 {content.nav[section]}
                 {activeSection === section && (
