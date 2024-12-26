@@ -15,7 +15,8 @@ const CustomParticleBackground: React.FC = () => {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const particlesRef = useRef<Particle[]>([])
-  const animationFrameRef = useRef<number | null>(null);
+  const animationFrameRef = useRef<number>()
+
   useEffect(() => {
     const handleResize = () => {
       if (canvasRef.current) {
