@@ -1,5 +1,5 @@
 
-import './globals.css'; // Assicurati che il percorso sia corretto
+import '../styles/globals.css'; // Assicurati che il percorso sia corretto
 
 
 export const metadata = {
