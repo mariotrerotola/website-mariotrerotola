@@ -13,7 +13,7 @@ const ParticleBackground: React.FC = () => {
   return (
     <Particles
       id="tsparticles"
-      // init={particlesInit}
+      init={particlesInit}
       options={{
         fullScreen: {
           enable: true,

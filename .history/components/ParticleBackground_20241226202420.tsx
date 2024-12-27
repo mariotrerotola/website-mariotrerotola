@@ -13,7 +13,7 @@ const ParticleBackground: React.FC = () => {
   return (
     <Particles
       id="tsparticles"
-      // init={particlesInit}
+      init={particlesInit}
       options={{
         fullScreen: {
           enable: true,
@@ -35,9 +35,7 @@ const ParticleBackground: React.FC = () => {
               enable: true,
               mode: "repulse",
             },
-            resize: {
-              enable: true,
-            }
+            resize: true,
           },
           modes: {
             push: {
@@ -73,7 +71,7 @@ const ParticleBackground: React.FC = () => {
           number: {
             density: {
               enable: true,
-              // area: 800,
+              area: 800,
             },
             value: 80,
           },
