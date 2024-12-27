@@ -17,6 +17,7 @@ export default function RootLayout({
       <Head>
         <title>Mario Trerotola</title> {/* Page title */}
         <meta name="description" content="Progetto soluzioni basate su IA per rivoluzionare i settori e aprire nuove opportunità." /> {/* Meta description */}
+        <link rel="icon" href="/favicon.ico" /> {/* Favicon */}
       </Head>
       <body>{children}</body>
     </html>
